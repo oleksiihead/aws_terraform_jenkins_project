@@ -82,7 +82,8 @@ pipeline {
             }
         
         steps {
-           sh "terraform destroy --auto-approve"
+            sh 'terraform init -input=false'
+            sh "terraform destroy --auto-approve"
         }
     }
 
